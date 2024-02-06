@@ -1,0 +1,35 @@
+m4_changequote(<|,|>)
+m4_define(Comment,)
+\newtheorem{pir}{Potentially interesting result}
+\newtheorem{defn}{Definition}
+\newtheorem{thrm}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\documentclass{article}
+
+\usepackage{xspace,graphicx,url,float,natbib}
+\usepackage{fontspec}
+\long\def\todo#1{
+
+%{\bf To do: #1}
+
+}
+\long\def\comment#1{\xspace}
+
+\newenvironment{items}{
+\setlength{\leftmargini}{0pt}
+\begin{itemize}
+  \setlength{\itemsep}{3pt}
+    \setlength{\parskip}{0pt}
+      \setlength{\parsep}{3pt}
+      }{\end{itemize}}
+
+
+%\def\citet#1{\cite{#1}}
+%\def\citep#1{\cite{#1}}
+\begin{document}
+
+
+%\title{Lit review}
+%\maketitle
+

@@ -1,0 +1,6 @@
+graph g1{
+    node [shape=plaintext];
+    H -- B -- C;
+    H -- C;
+    H -- A;
+}

@@ -1,0 +1,8 @@
+graph g3{
+    node [shape=plaintext];
+    "(H, A, C)"-- "(H, A, B)" [len=1.5];
+    "(H, A, B)" -- "(H, B, C)"-- "(H, A, C)"
+}
+
+
+

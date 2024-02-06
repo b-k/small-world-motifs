@@ -1,0 +1,15 @@
+graph g2{
+    node [shape=plaintext];
+    BC [label="(B, C)"];
+    HB [label="(H, B)"];
+    HC [label="(H, C)"];
+    HA [label="(H, A)"];
+    HB -- HC;
+    HC -- HA;
+    HB -- BC;
+    BC -- HC;
+    HA -- HB;
+}
+
+
+
