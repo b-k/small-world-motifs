@@ -12,7 +12,7 @@ Or, graphs can be read from a pipe-delimited file (p.d.f.).
 Once a graph is read in to the database format used here, it can be saved in that format for faster loading.
 
 * This was written by a U.S. Government employee in the course of work, so U.S.C. Title 17 (copyright) does
-  not apply. As a courtesy, please cite the work if you use it in your own.
+  not apply. As a courtesy, please cite this work if you use it in your own. [![DOI](https://zenodo.org/badge/753395493.svg)](https://zenodo.org/doi/10.5281/zenodo.10622536)
 
 * For especially large graphs,
 this package includes an option to take a subset of the nodes in the graph, as set in the sample script, `go.lua`.
