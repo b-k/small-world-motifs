@@ -1,4 +1,4 @@
-= Probabilistic motivic analysis for large graphs
+# Probabilistic motivic analysis for large graphs
 
 This package, a work in progress, provides a simple algorithm to generate all subgraphs of all sizes up to the user's chosen maximum.
 It does so by generating a sequence of dual graphs, in which every node in the previous graph becomes a set of
@@ -39,7 +39,7 @@ a larger disconnected motif, their count is approximately the product of the cou
 
 * Output is another plain-text p.d.f.
 
-== Writeup ==
+## Writeup
 
 Please see the doc directory for a full writeup.
 There is a copy in Portable Document Format, but the source is also present; on a
@@ -50,12 +50,12 @@ The three diagrams were generated using graphviz; see `makefile`.
 The lead application was [this paper](https://doi.org/10.48550/arXiv.2401.12118) on the United
 States's network of business entities, where statistics on 4- and 5-motifs are presented.
 
-== Technical ==
+## Technical
 
 This Readme gives a more technical overview of the basic execution of the program and the components provided.
 The code itself also has in-line documentation for the finer details.
 
-== Running it
+### Running it
 A `Dockerfile` building an environment in which the program runs is provided.
 Try `make dock` to generate the image and `make shell` to open a shell in a container.
 The project directory on the parent system is mounted in the `/home/ldb/@` directory in the container.
@@ -112,7 +112,7 @@ string.
   does so using a command-line utility and queries aggregate statistics and optionally compares two
   runs.
 
-== The algorithm
+### The algorithm
 Here is a summary of the procedure from a more technical perspective. See the writeup for a more
 mathematical overview. All functions referenced are described in detail in the components list below.
 
@@ -127,7 +127,7 @@ mathematical overview. All functions referenced are described in detail in the c
     * The label for each node in the post-graph is a subgraph in the original graph with size $M$. Via
       `lineage_sort`, generate the canonicalized subgraph between the nodes in a given label. Write to output.
 
-== The technical components
+### The technical components
 
 * `netlib.c`
 The core of the system is a Berkeley database (a key-value store) expressing a graph, or set of
@@ -136,7 +136,7 @@ This component is easy to extract from the rest of the package, and could be use
 without regard to the motivic analysis. The C-side components have corresponding Lua equivalents
 (see below) for those who prefer Lua over C.
 
-** Database structure
+#### Database structure
  * The database is actually four sub-databases, the `pc` database listing parent-to-child edges, the
   `cp` database listing child-to-parent edges, and two side-databases named `colordb` and `dupdb` to keep track of details
   for the purpose of subgraph calculation. If using the graph database outside the context of 
@@ -185,7 +185,7 @@ Finally, `net.get_subgraphs` does the subgraph search. But you will want to use 
 `go.lua` to do the search, because correctly using `get_subgraphs` depends on incrementally doing
 larger and larger subgraphs, which the loop in `go` does.
      
-=- Support structures and per-file notes
+### Support structures and per-file notes
 These are objects packaging elements of the procedure. They don't stand alone.
 
  * `motifs.c`
